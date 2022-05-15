@@ -114,4 +114,33 @@ public class CoinCoverterTest {
 				"Converts " + amount + " pennies to '" + expectedOutput + "'");
 	}
 
+	@Test
+	@DisplayName("Converts 1000 pennies to '2 x £5' using all legal tender")
+	void convertTenPounds_commemorativeCoins() {
+		final int amount = 1000;
+		final String expectedOutput = "2 x £5";
+		CoinCoverter coinCoverter = new CoinCoverter();
+		assertEquals(expectedOutput, coinCoverter.convertToCoinsIncludingCommemorative(amount),
+				"Converts " + amount + " pennies to '" + expectedOutput + "'");
+	}
+
+	@Test
+	@DisplayName("Converts 3731 pennies to '18 x £2, 1 x £1, 1 x 20p, 1 x 10p, 1 x 1p'")
+	void convertThirtySevenPoundsThirtyOnePence() {
+		final int amount = 3731;
+		final String expectedOutput = "18 x £2, 1 x £1, 1 x 20p, 1 x 10p, 1 x 1p";
+		CoinCoverter coinCoverter = new CoinCoverter();
+		assertEquals(expectedOutput, coinCoverter.convertToCoins(amount),
+				"Converts " + amount + " pennies to '" + expectedOutput + "'");
+	}
+
+	@Test
+	@DisplayName("Converts 3731 pennies to '1 x £20, 3 x £5, 1 x £2, 1 x 20p, 1 x 10p, 1 x 1p' using all legal tender")
+	void convertThirtySevenPoundsThirtyOnePence_commemorativeCoins() {
+		final int amount = 3731;
+		final String expectedOutput = "1 x £20, 3 x £5, 1 x £2, 1 x 20p, 1 x 10p, 1 x 1p";
+		CoinCoverter coinCoverter = new CoinCoverter();
+		assertEquals(expectedOutput, coinCoverter.convertToCoinsIncludingCommemorative(amount),
+				"Converts " + amount + " pennies to '" + expectedOutput + "'");
+	}
 }
