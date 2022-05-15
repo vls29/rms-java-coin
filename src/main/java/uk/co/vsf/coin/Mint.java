@@ -1,0 +1,14 @@
+package uk.co.vsf.coin;
+
+import java.util.List;
+
+import uk.co.vsf.coin.domain.Coin;
+
+public interface Mint {
+
+	/**
+	 * Return a list of coins that are in common circulation.  This excludes commemorative coins.
+	 * @return list of coins in common circulation
+	 */
+	List<Coin> getCoinsInCirculation();
+}
