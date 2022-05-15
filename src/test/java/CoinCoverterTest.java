@@ -15,7 +15,7 @@ public class CoinCoverterTest {
 	}
 
 	@Test
-	@DisplayName("Converts 0001 penny to '1 x 1p'")
+	@DisplayName("Converts 1 penny to '1 x 1p'")
 	void convertAPenny() {
 		final int amount = 1;
 		final String expectedOutput = "1 x 1p";
@@ -25,7 +25,7 @@ public class CoinCoverterTest {
 	}
 
 	@Test
-	@DisplayName("Converts 0123 pennies to '1 x £1, 1 x 20p, 1 x 2p, 1 x 1p'")
+	@DisplayName("Converts 123 pennies to '1 x £1, 1 x 20p, 1 x 2p, 1 x 1p'")
 	void convertOnePoundTwentyThree() {
 		final int amount = 123;
 		final String expectedOutput = "1 x £1, 1 x 20p, 1 x 2p, 1 x 1p";
