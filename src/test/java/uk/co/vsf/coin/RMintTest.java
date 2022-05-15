@@ -29,7 +29,7 @@ public class RMintTest {
 		expected.add(new BaseCoin(100));
 		expected.add(new BaseCoin(200));
 		
-		List<Coin> result = mint.getCoinsInCirculation();
+		List<Coin> result = mint.getCommonCoinsInCirculation();
 		assertTrue(expected.containsAll(result));
 		assertEquals(8, result.size());
 	}

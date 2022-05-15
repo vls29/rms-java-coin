@@ -17,7 +17,7 @@ public class CoinChangerTest {
 	@Test
 	void amountOnePence() {
 		Coin expectedCoin = new BaseCoin(1);
-		Map<Coin, Integer> result = changer.getAmountAsChange(1, RMint.getInstance().getCoinsInCirculation());
+		Map<Coin, Integer> result = changer.getAmountAsChange(1, RMint.getInstance().getCommonCoinsInCirculation());
 		assertTrue(result.containsKey(expectedCoin));
 		assertEquals(1, result.get(expectedCoin));
 	}
@@ -25,7 +25,7 @@ public class CoinChangerTest {
 	@Test
 	void amountFourPence() {
 		Coin expectedCoin = new BaseCoin(2);
-		Map<Coin, Integer> result = changer.getAmountAsChange(4, RMint.getInstance().getCoinsInCirculation());
+		Map<Coin, Integer> result = changer.getAmountAsChange(4, RMint.getInstance().getCommonCoinsInCirculation());
 		assertEquals(1, result.keySet().size());
 		assertTrue(result.containsKey(expectedCoin));
 		assertEquals(2, result.get(expectedCoin));
@@ -36,7 +36,7 @@ public class CoinChangerTest {
 		Coin expectedCoin1 = new BaseCoin(1);
 		Coin expectedCoin2 = new BaseCoin(5);
 
-		Map<Coin, Integer> result = changer.getAmountAsChange(6, RMint.getInstance().getCoinsInCirculation());
+		Map<Coin, Integer> result = changer.getAmountAsChange(6, RMint.getInstance().getCommonCoinsInCirculation());
 		assertEquals(2, result.keySet().size());
 
 		assertTrue(result.containsKey(expectedCoin1));
@@ -52,7 +52,7 @@ public class CoinChangerTest {
 		Coin expectedCoin2 = new BaseCoin(2);
 		Coin expectedCoin3 = new BaseCoin(5);
 
-		Map<Coin, Integer> result = changer.getAmountAsChange(8, RMint.getInstance().getCoinsInCirculation());
+		Map<Coin, Integer> result = changer.getAmountAsChange(8, RMint.getInstance().getCommonCoinsInCirculation());
 		assertEquals(3, result.keySet().size());
 
 		assertTrue(result.containsKey(expectedCoin1));
@@ -69,7 +69,7 @@ public class CoinChangerTest {
 		Coin expectedCoin1 = new BaseCoin(2);
 		Coin expectedCoin2 = new BaseCoin(5);
 
-		Map<Coin, Integer> result = changer.getAmountAsChange(9, RMint.getInstance().getCoinsInCirculation());
+		Map<Coin, Integer> result = changer.getAmountAsChange(9, RMint.getInstance().getCommonCoinsInCirculation());
 		assertEquals(2, result.keySet().size());
 
 		assertTrue(result.containsKey(expectedCoin1));
@@ -87,7 +87,7 @@ public class CoinChangerTest {
 		Coin expectedCoin4 = new BaseCoin(20);
 		Coin expectedCoin5 = new BaseCoin(50);
 
-		Map<Coin, Integer> result = changer.getAmountAsChange(78, RMint.getInstance().getCoinsInCirculation());
+		Map<Coin, Integer> result = changer.getAmountAsChange(78, RMint.getInstance().getCommonCoinsInCirculation());
 		assertEquals(5, result.keySet().size());
 
 		assertTrue(result.containsKey(expectedCoin1));

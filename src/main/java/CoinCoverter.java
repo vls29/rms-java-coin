@@ -29,7 +29,7 @@ public class CoinCoverter {
 	private String getChange(int amount, boolean includingCommemorative) {
 		Mint mint = RMint.getInstance();
 		
-		List<Coin> coins = includingCommemorative ? mint.getLegalTenderCoins() : mint.getCoinsInCirculation();
+		List<Coin> coins = includingCommemorative ? mint.getLegalTenderCoins() : mint.getCommonCoinsInCirculation();
 
 		Map<Coin, Integer> change = CoinChanger.getInstance().getAmountAsChange(amount, coins);
 

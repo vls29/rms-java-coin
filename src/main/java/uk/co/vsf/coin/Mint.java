@@ -10,7 +10,7 @@ public interface Mint {
 	 * Return a list of coins that are in common circulation.  This excludes commemorative coins.
 	 * @return list of coins in common circulation
 	 */
-	List<Coin> getCoinsInCirculation();
+	List<Coin> getCommonCoinsInCirculation();
 	
 	/**
 	 * Returns a list of coins that are classed as legal tender.  This includes commemorative coins but excludes the 25p crown.

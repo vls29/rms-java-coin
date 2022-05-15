@@ -31,7 +31,7 @@ public class RMint implements Mint {
 	}
 
 	@Override
-	public List<Coin> getCoinsInCirculation() {
+	public List<Coin> getCommonCoinsInCirculation() {
 		return new CopyOnWriteArrayList<>(this.coinsInCirculation);
 	}
 
