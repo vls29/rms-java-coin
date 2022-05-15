@@ -20,7 +20,7 @@ public class CoinCoverterTest {
 		final int amount = 1;
 		final String expectedOutput = "1 x 1p";
 		CoinCoverter coinCoverter = new CoinCoverter();
-		assertEquals(expectedOutput, coinCoverter.convertToCoins(1),
+		assertEquals(expectedOutput, coinCoverter.convertToCoins(amount),
 				"Converts " + amount + " pennies to '" + expectedOutput + "'");
 	}
 
@@ -30,7 +30,7 @@ public class CoinCoverterTest {
 		final int amount = 123;
 		final String expectedOutput = "1 x £1, 1 x 20p, 1 x 2p, 1 x 1p";
 		CoinCoverter coinCoverter = new CoinCoverter();
-		assertEquals(expectedOutput, coinCoverter.convertToCoins(123),
+		assertEquals(expectedOutput, coinCoverter.convertToCoins(amount),
 				"Converts " + amount + " pennies to '" + expectedOutput + "'");
 	}
 
@@ -40,7 +40,7 @@ public class CoinCoverterTest {
 		final int amount = 223;
 		final String expectedOutput = "1 x £2, 1 x 20p, 1 x 2p, 1 x 1p";
 		CoinCoverter coinCoverter = new CoinCoverter();
-		assertEquals(expectedOutput, coinCoverter.convertToCoins(223),
+		assertEquals(expectedOutput, coinCoverter.convertToCoins(amount),
 				"Converts " + amount + " pennies to '" + expectedOutput + "'");
 	}
 
@@ -50,7 +50,7 @@ public class CoinCoverterTest {
 		final int amount = 574;
 		final String expectedOutput = "2 x £2, 1 x £1, 1 x 50p, 1 x 20p, 2 x 2p";
 		CoinCoverter coinCoverter = new CoinCoverter();
-		assertEquals(expectedOutput, coinCoverter.convertToCoins(223),
+		assertEquals(expectedOutput, coinCoverter.convertToCoins(amount),
 				"Converts " + amount + " pennies to '" + expectedOutput + "'");
 	}
 

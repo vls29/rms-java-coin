@@ -6,9 +6,9 @@ import java.util.List;
 import uk.co.vsf.coin.domain.BaseCoin;
 import uk.co.vsf.coin.domain.Coin;
 
-public class RoyalMint implements Mint {
+public class RMint implements Mint {
 	private static Mint INSTANCE;
-	
+
 	private final List<Coin> coinsInCirculation;
 
 	{
@@ -18,16 +18,20 @@ public class RoyalMint implements Mint {
 		coinsInCirculation = Arrays.asList(coins);
 	}
 
+	private RMint() {
+		
+	}
+
 	@Override
 	public List<Coin> getCoinsInCirculation() {
 		return coinsInCirculation;
 	}
 
 	public static Mint getInstance() {
-		if(INSTANCE == null) {
-			INSTANCE = new RoyalMint();
+		if (INSTANCE == null) {
+			INSTANCE = new RMint();
 		}
-		
+
 		return INSTANCE;
 	}
 }

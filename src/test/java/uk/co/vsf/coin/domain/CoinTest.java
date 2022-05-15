@@ -34,7 +34,7 @@ public class CoinTest {
 
 		assertNotEquals(coin.getDenomination(), coin2.getDenomination());
 	}
-	
+
 	@Test
 	@DisplayName("Five pence coin is greater than a one pence coin")
 	void compareCoins_FiveIsGreaterThanOnePence() {
@@ -43,7 +43,7 @@ public class CoinTest {
 
 		assertEquals(1, fivePence.compareTo(onePence));
 	}
-	
+
 	@Test
 	@DisplayName("One pence coin is less than a ten pence coin")
 	void compareCoins_OnePenceIsLessThanTenPence() {
@@ -52,5 +52,28 @@ public class CoinTest {
 
 		assertEquals(-1, onePence.compareTo(tenPence));
 	}
-	
+
+	@Test
+	@DisplayName("toString() 1p")
+	void toStringOnePence() {
+		assertEquals("1p", new BaseCoin(1).toString());
+	}
+
+	@Test
+	@DisplayName("toString() 2p")
+	void toStringTwoPence() {
+		assertEquals("2p", new BaseCoin(2).toString());
+	}
+
+	@Test
+	@DisplayName("toString() £1")
+	void toStringOnePound() {
+		assertEquals("£1", new BaseCoin(100).toString());
+	}
+
+	@Test
+	@DisplayName("toString() £2")
+	void toStringTwoPound() {
+		assertEquals("£2", new BaseCoin(200).toString());
+	}
 }

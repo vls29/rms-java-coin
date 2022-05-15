@@ -50,4 +50,12 @@ public class BaseCoin implements Coin {
 			return false;
 		return true;
 	}
+	
+	@Override
+	public String toString() {
+		if(this.denomination < 100) {
+			return this.denomination + "p";
+		}
+		return "£" + (this.denomination / 100);
+	}
 }

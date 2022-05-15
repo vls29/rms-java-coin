@@ -11,12 +11,12 @@ import org.junit.jupiter.api.Test;
 import uk.co.vsf.coin.domain.BaseCoin;
 import uk.co.vsf.coin.domain.Coin;
 
-public class RoyalMintTest {
+public class RMintTest {
 
 	@Test
 	@DisplayName("getCoinsInCirculation() returns all of the common coins in circulation")
 	void getCoinDenominationReturnsConstructorInput() {
-		Mint mint = RoyalMint.getInstance();
+		Mint mint = RMint.getInstance();
 
 		List<Coin> expected = new ArrayList<>();
 		expected.add(new BaseCoin(1));
